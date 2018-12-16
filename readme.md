@@ -15,7 +15,8 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
     * Easy to change lyrics, a chord, or add an annotation
 - Web-based
     * No need to install yet another app
-    * Works offline, too
+    * Works offline, too (HTML5 + app cache + offline storage)
+        - is the extra complexity justified? TBD
     * Rich features on desktop version (no UI clutter in app)
     * Reconsider native mobile app if features are really a lot better on native
     * API based
@@ -26,8 +27,9 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
     * Transpose
 - Setlists
     * Select songs to play at gig, put in order
-- PDF export
-    * Should preserve chord/lyrics alignment
+- Exports
+    * Plain text export for everything
+    * PDF export for sheets, should preserve chord/lyrics alignment
 - Payment plan
     * Subscription
     * Monthly (low threshold)
@@ -39,6 +41,7 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
 ### Future
 
 - More musical info
+    * Song duration (-> setlist duration)
     * Beats Per Minute, show flash
     * Mixing / Effect / Amp settings
 - Annotations for Mixing / Lighting people
@@ -53,8 +56,9 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
     * Area-based (chord/lyrics/notes) roles
 - Catalogue
     * Readily available catalogue of famous songs for instant use (beware of rights issues)
+    * Import from "Internet Search"?
 - Direct API access
-    * Integrations with WhatsApp, Slack, SalesForce, whatever
+    * Integrations with WhatsApp, Google Drive, Dropbox, Slack, SalesForce, whatever
 
 
 ### Not likely
@@ -69,17 +73,17 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
 
 - Every band
     * Has at least one "digitally challenged" member
-    * Has members with different cell phone OS'es.
+    * Has members with different mobile OS'es.
     * Has at least one person who just likes to print a bunch of paper sheets.
 - Target group are musicians who play in groups
     * Three or more members, genre: popular, western music (no half-notes)
-    * No orchestras, brass bands
+    * No orchestras, brass bands (focus on chords, not arrangements of one note instruments)
 - Target group comprises all levels of professionalism
-    * full-time pros who play their own work exclusively are less likely to benefit
-    * lots of other pros play in different groups (with different songs) all the time
-    * lots of amateurs struggle with chords, and change bands / songs more frequently
+    * lots of amateurs struggle with chords, change bands / songs frequently
+    * lots pros play in different groups (with different songs) all the time
+    * only full-time pros who play their own work exclusively are less likely to benefit
 - Pricing:
-    * Anyone that takes their music seriously will pay up to 4 EUR/mo
+    * Anyone who takes their music seriously will pay up to 4 EUR/mo
     * Not everybody who takes their music seriously will pay 5 EUR/mo
         - That's what Spotify charges, and some people try to get by without.
 - Target group size: About 1 in 1000 people would consider this app
@@ -92,6 +96,33 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
 
 ## Comparable solutions
 
+- [Band Helper](http://www.bandhelper.com/)
+    * Pros
+        + [Lots of features](http://www.bandhelper.com/main/features.html)
+        + iOS and Android
+        + Extra modules (paid): Schedule, Finance, Contacts, Stage plot
+    * Cons
+        - Not the smoothest interface
+    * Pricing
+        - [3$/mo. for 2-5 members](http://www.bandhelper.com/main/pricing.html)
+- [Set List Maker](http://www.arlomedia.com/apps/setlistmaker/main/home.html)
+    * Pros
+        + iOS and Android
+    * Cons
+        - "Sync" by sending and importing "databases" (deleting existing "database')
+    * Pricing
+        - &euro;16
+- [Chords + Lyrics](http://www.chordsandlyricsapp.com/)
+    * Pros
+        + Smooth interface
+        + Transpose
+        + Download songs from internet
+    * Cons
+        - No group sharing / syncing
+        - iOS only
+        - Baaad reviews
+    * Pricing
+        - $6, one time purchase
 - [OnSong](https://onsongapp.com/)
     * Pros
         + [Lots of features](https://onsongapp.com/docs/features/)
@@ -100,8 +131,10 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
     * Cons
         - No group sharing / syncing
         - iOS only
+        - price
+    * Pricing
         - $30, one time purchase
-- Google Docs/Drive
+- [Google Docs/Drive](https://docs.google.com/)
     * Pros
         + free
         + web-based
@@ -113,8 +146,12 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
         - PDF export alignment errors
         - No transpose, or other music-specific features, ever
         - "Pseudo-free" (pay with your data/soul) / Some people's aversion to Google.
+    * Pricing
+        - free
 
 
 ### Not Quite The Same Thing
 
 - [Band Mule](https://www.bandmule.com/) More focus on organisation (calendar), communication (chat), file sharing
+- [LyricPadApp](http://www.lyricpadapps.com/) Scrolling lyrics
+- [Setlist Helper](http://www.setlisthelper.com/) Create setlists, no chords, lyrics. Also, fugly.
