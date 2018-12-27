@@ -31,9 +31,7 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
     * Plain text export for everything
     * PDF export for sheets, should preserve chord/lyrics alignment
 - Payment plan
-    * Subscription
-    * Monthly (low threshold)
-    * About 1 to 4 euros/dollars per month
+    * Low threshold
 - Internationalization
     * Interface in these languages: EN ES DE FR NL initially
 
@@ -155,3 +153,33 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
 - [Band Mule](https://www.bandmule.com/) More focus on organisation (calendar), communication (chat), file sharing
 - [LyricPadApp](http://www.lyricpadapps.com/) Scrolling lyrics
 - [Setlist Helper](http://www.setlisthelper.com/) Create setlists, no chords, lyrics. Also, fugly.
+
+
+## Implementation / Caveats
+
+
+### End user interaction
+
+As this will involve direct end user interaction, a large amount of time is needed to manage that:
+
+- Support / helpdesk (can be via e-mail)
+- Check online reviews
+
+
+### Payment plan
+
+- Subscription
+- Monthly (low threshold) and yearly
+- About 1 to 2 euros/dollars per month
+
+We'd need to send payment requests for continuation at the end of each subscription period.
+
+
+### Backend only?
+
+I'm assuming there's going to be a JS frontend and a REST API backend.
+
+A thought: can we just "sell" API calls to the back-end, and let another party
+take care of the front-end and customer support?
+
+This might open up our business also to people who wish to build an app.
