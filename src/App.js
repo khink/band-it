@@ -4,6 +4,14 @@ import './App.css';
 // API for local development
 const API = 'http://localhost:8000';
 
+function SongsListItem(props) {
+  return (
+    <li onClick={props.onClick} url={props.url}>
+      <span href="{url}">{props.title} ({props.as_performed_by})</span>
+    </li>
+  );
+}
+
 class SongsList extends Component {
   // Song picker list / menu
   state = {
@@ -41,9 +49,7 @@ class SongsList extends Component {
           // Check if loading is not in progress
           songs.map(song => {
             const { url, title, as_performed_by } = song;
-            return (
-              <div url={url}><span>{title} ({as_performed_by})</span></div>
-            );
+            return <SongsListItem onClick={() => this.props.handleSongClick(url)} url={url} key={url} title={title} as_performed_by={as_performed_by} />
           })
         // If there is a delay in data, let's let the user know it's loading
         ) : (
@@ -56,24 +62,44 @@ class SongsList extends Component {
 }
 
 class SongArea extends Component {
-  // Render a song's contents here
+
   render() {
+    // this.fetchSong(this.props.url);
     return (
       <div className="SongArea">
-        <p>No song selected. Pick one from the list.</p>
+        { this.props.lyrics ? <pre>{this.props.lyrics}</pre> : <p>No song selected. Pick one from the list.</p> }
       </div>
     );
   }
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lyrics: null,
+    };
+  }
+
+  fetchSong(url) {
+    fetch(url)
+      .then(response => response.json())
+      .then(data =>  this.setState({
+        lyrics: data.lyrics
+      })
+    )
+    .catch(error => this.setState({ error, isLoading: false }));
+  }
+
+  handleSongClick(url) {
+    this.fetchSong(url);
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <SongsList />
-          <SongArea />
-        </header>
+        <SongsList handleSongClick={(url) => this.handleSongClick(url)} />
+        <SongArea lyrics={this.state.lyrics} />
       </div>
     );
   }
