@@ -25,11 +25,15 @@ A web-based app for sharing music lyrics, chords, annotations and setlists with 
 - Chords / Music
     * Display differently than lyrics so it doesn't distract
     * Transpose
+    * TBD: Use ChordPro format + https://github.com/martijnversluis/ChordFiddle
 - Setlists
     * Select songs to play at gig, put in order
 - Exports
     * Plain text export for everything
     * PDF export for sheets, should preserve chord/lyrics alignment
+    * ChordPro
+- Imports
+    * ChordPro format (https://www.chordpro.org/)
 - Payment plan
     * Low threshold
 - Internationalization
