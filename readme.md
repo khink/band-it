@@ -3,6 +3,19 @@
 A web-based app for sharing music lyrics, chords, annotations and setlists with band members.
 
 
+## Installation
+
+### Backend
+
+A Django REST framework based backend.
+
+    pip install -r requirements.txt
+    ./manage.py runserver
+
+* Add songs via the Django admin interface at `/admin/`
+* Inspect the API endpoint at `/`
+
+
 ## Features
 
 ### Initial
