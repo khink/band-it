@@ -55,6 +55,11 @@ class SongsList extends Component {
         ) : (
           <h3>Loading...</h3>
         )}
+
+        { // Display a nice message if no songs found.
+          songs.length ? <span /> :
+          <p>No songs found. Add some in the <a href="http://localhost:8000/admin">backend</a>.</p>
+        }
       </div>
     );
   }
