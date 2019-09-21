@@ -21,6 +21,7 @@ install: .develop.done # alias
 .develop.done: $(VIRTUALENV)
 	$(PYTHON) -m pip install -r requirements.txt
 	$(PYTHON) -m manage migrate
+	$(PYTHON) -m manage create_initial_songs
 	touch $@
 
 .PHONY: run
